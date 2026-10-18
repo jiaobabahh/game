@@ -1,0 +1,663 @@
+[
+ {
+  "id": "P01",
+  "kind": "prop",
+  "level": "功能",
+  "title": "德摩根定律",
+  "check": "equiv",
+  "a": "¬(P∧Q)",
+  "b": "¬P∨¬Q",
+  "want": true
+ },
+ {
+  "id": "P02",
+  "kind": "prop",
+  "level": "功能",
+  "title": "LaTeX 输入兼容（boldsymbol/neg/land）",
+  "check": "equiv",
+  "a": "$\\boldsymbol{\\neg(C \\land G)}$",
+  "b": "¬C∨¬G",
+  "want": true
+ },
+ {
+  "id": "P03",
+  "kind": "prop",
+  "level": "功能",
+  "title": "蕴含展开",
+  "check": "equiv",
+  "a": "P→Q",
+  "b": "¬P∨Q",
+  "want": true
+ },
+ {
+  "id": "P04",
+  "kind": "prop",
+  "level": "功能",
+  "title": "逆否命题",
+  "check": "equiv",
+  "a": "P→Q",
+  "b": "¬Q→¬P",
+  "want": true
+ },
+ {
+  "id": "P05",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "AI 常把蕴当当可交换：P→Q 与 Q→P",
+  "check": "equiv",
+  "a": "P→Q",
+  "b": "Q→P",
+  "want": false
+ },
+ {
+  "id": "P06",
+  "kind": "prop",
+  "level": "功能",
+  "title": "吸收律",
+  "check": "equiv",
+  "a": "P∨(P∧Q)",
+  "b": "P",
+  "want": true
+ },
+ {
+  "id": "P07",
+  "kind": "prop",
+  "level": "功能",
+  "title": "分配律",
+  "check": "equiv",
+  "a": "P∧(Q∨R)",
+  "b": "(P∧Q)∨(P∧R)",
+  "want": true
+ },
+ {
+  "id": "P08",
+  "kind": "prop",
+  "level": "功能",
+  "title": "假言三段论是永真式",
+  "check": "class",
+  "a": "(P→Q)∧(Q→R)→(P→R)",
+  "want": "永真"
+ },
+ {
+  "id": "P09",
+  "kind": "prop",
+  "level": "功能",
+  "title": "矛盾联言",
+  "check": "class",
+  "a": "(P∨Q)∧¬P∧¬Q",
+  "want": "永假"
+ },
+ {
+  "id": "P10",
+  "kind": "prop",
+  "level": "功能",
+  "title": "偶然式",
+  "check": "class",
+  "a": "P∧Q",
+  "want": "可满足"
+ },
+ {
+  "id": "P11",
+  "kind": "prop",
+  "level": "功能",
+  "title": "主析取范式 P∧Q",
+  "check": "pdnf",
+  "a": "P∧Q",
+  "want": [
+   3
+  ]
+ },
+ {
+  "id": "P12",
+  "kind": "prop",
+  "level": "功能",
+  "title": "主析取范式 P∨Q",
+  "check": "pdnf",
+  "a": "P∨Q",
+  "want": [
+   1,
+   2,
+   3
+  ]
+ },
+ {
+  "id": "P13",
+  "kind": "prop",
+  "level": "功能",
+  "title": "主析取范式 P→Q",
+  "check": "pdnf",
+  "a": "P→Q",
+  "want": [
+   0,
+   1,
+   3
+  ]
+ },
+ {
+  "id": "P14",
+  "kind": "prop",
+  "level": "功能",
+  "title": "主合取范式 P∨Q",
+  "check": "pcnf",
+  "a": "P∨Q",
+  "want": [
+   0
+  ]
+ },
+ {
+  "id": "P15",
+  "kind": "prop",
+  "level": "功能",
+  "title": "排中律",
+  "check": "class",
+  "a": "P∨¬P",
+  "want": "永真"
+ },
+ {
+  "id": "P16",
+  "kind": "prop",
+  "level": "边界",
+  "title": "残缺公式一",
+  "check": "parse_err",
+  "a": "P∧"
+ },
+ {
+  "id": "P17",
+  "kind": "prop",
+  "level": "边界",
+  "title": "括号不配对",
+  "check": "parse_err",
+  "a": "P∨(Q"
+ },
+ {
+  "id": "P18",
+  "kind": "prop",
+  "level": "功能",
+  "title": "德摩根蕴含形式永真",
+  "check": "class",
+  "a": "¬(P∧Q)→(¬P∨¬Q)",
+  "want": "永真"
+ },
+ {
+  "id": "P19",
+  "kind": "prop",
+  "level": "功能",
+  "title": "双条件展开",
+  "check": "equiv",
+  "a": "P↔Q",
+  "b": "(P→Q)∧(Q→P)",
+  "want": true
+ },
+ {
+  "id": "P20",
+  "kind": "prop",
+  "level": "边界",
+  "title": "两个矛盾式在扩域意义下等价",
+  "check": "equiv",
+  "a": "P∧¬P",
+  "b": "Q∧¬Q",
+  "want": true
+ },
+ {
+  "id": "P21",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "德摩根错记为 ¬P∨¬Q",
+  "check": "equiv",
+  "a": "¬(P∨Q)",
+  "b": "¬P∨¬Q",
+  "want": false
+ },
+ {
+  "id": "P22",
+  "kind": "prop",
+  "level": "功能",
+  "title": "双重否定",
+  "check": "equiv",
+  "a": "¬¬P",
+  "b": "P",
+  "want": true
+ },
+ {
+  "id": "P23",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "前件与后件混淆",
+  "check": "equiv",
+  "a": "(P→Q)∧P",
+  "b": "Q",
+  "want": false
+ },
+ {
+  "id": "P24",
+  "kind": "prop",
+  "level": "功能",
+  "title": "蕴含与其展开等价（整体永真）",
+  "check": "class",
+  "a": "(P→Q)↔(¬P∨Q)",
+  "want": "永真"
+ },
+ {
+  "id": "P25",
+  "kind": "prop",
+  "level": "功能",
+  "title": "主合取范式 P∧Q",
+  "check": "pcnf",
+  "a": "P∧Q",
+  "want": [
+   0,
+   1,
+   2
+  ]
+ },
+ {
+  "id": "P26",
+  "kind": "prop",
+  "level": "功能",
+  "title": "前提自相矛盾",
+  "check": "class",
+  "a": "(P→Q)∧P∧¬Q",
+  "want": "永假"
+ },
+ {
+  "id": "P27",
+  "kind": "prop",
+  "level": "功能",
+  "title": "析取交换律",
+  "check": "equiv",
+  "a": "P∨Q",
+  "b": "Q∨P",
+  "want": true
+ },
+ {
+  "id": "P28",
+  "kind": "prop",
+  "level": "边界",
+  "title": "蕴当环取永真式",
+  "check": "class",
+  "a": "(P→Q)∨(Q→P)",
+  "want": "永真"
+ },
+ {
+  "id": "P29",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "蕴含右结合陷阱",
+  "check": "equiv",
+  "a": "((P→Q)→R)",
+  "b": "(P→(Q→R))",
+  "want": false
+ },
+ {
+  "id": "P30",
+  "kind": "prop",
+  "level": "边界",
+  "title": "联言自毁",
+  "check": "class",
+  "a": "P∧Q∧(¬P∨¬Q)",
+  "want": "永假"
+ },
+ {
+  "id": "P31",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "AI 把德摩根写成合取",
+  "check": "equiv",
+  "a": "¬(P∧Q)",
+  "b": "¬P∧¬Q",
+  "want": false
+ },
+ {
+  "id": "P32",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "AI 称 P→Q 永真（实为偶然式）",
+  "check": "class",
+  "a": "P→Q",
+  "want": "可满足"
+ },
+ {
+  "id": "P33",
+  "kind": "prop",
+  "level": "功能",
+  "title": "双条件的主析取范式",
+  "check": "pdnf",
+  "a": "P↔Q",
+  "want": [
+   0,
+   3
+  ]
+ },
+ {
+  "id": "P34",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "AI 声称 P→Q 与 ¬P∨Q 不等价",
+  "check": "equiv",
+  "a": "P→Q",
+  "b": "¬P∨Q",
+  "want": true
+ },
+ {
+  "id": "P35",
+  "kind": "prop",
+  "level": "杀手",
+  "title": "AI 判双条件展开正确（本条 AI 是对的）",
+  "check": "equiv",
+  "a": "(P→Q)∧(Q→P)",
+  "b": "P↔Q",
+  "want": true
+ },
+ {
+  "id": "S01",
+  "kind": "set",
+  "level": "功能",
+  "title": "并集",
+  "lhs": "{1,2}∪{2,3}",
+  "op": "=",
+  "rhs": "{1,2,3}",
+  "want": true
+ },
+ {
+  "id": "S02",
+  "kind": "set",
+  "level": "功能",
+  "title": "交集",
+  "lhs": "{1,2}∩{2,3}",
+  "op": "=",
+  "rhs": "{2}",
+  "want": true
+ },
+ {
+  "id": "S03",
+  "kind": "set",
+  "level": "功能",
+  "title": "差集",
+  "lhs": "{1,2,3}−{2}",
+  "op": "=",
+  "rhs": "{1,3}",
+  "want": true
+ },
+ {
+  "id": "S04",
+  "kind": "set",
+  "level": "功能",
+  "title": "对称差",
+  "lhs": "{1,2}⊕{2,3}",
+  "op": "=",
+  "rhs": "{1,3}",
+  "want": true
+ },
+ {
+  "id": "S05",
+  "kind": "set",
+  "level": "边界",
+  "title": "幂集基数 2^n",
+  "lhs": "|P({1,2})|",
+  "op": "=",
+  "rhs": "4",
+  "want": true
+ },
+ {
+  "id": "S06",
+  "kind": "set",
+  "level": "边界",
+  "title": "基数",
+  "lhs": "|{a,b,c}|",
+  "op": "=",
+  "rhs": "3",
+  "want": true
+ },
+ {
+  "id": "S07",
+  "kind": "set",
+  "level": "杀手",
+  "title": "AI 常错：A∪B ⊆ A",
+  "lhs": "A∪B",
+  "op": "⊆",
+  "rhs": "A",
+  "env": {
+   "A": "{1}",
+   "B": "{2}"
+  },
+  "want": false
+ },
+ {
+  "id": "S08",
+  "kind": "set",
+  "level": "功能",
+  "title": "分配律全称验证（自动反例搜索）",
+  "lhs": "A∪(B∩C)",
+  "op": "=",
+  "rhs": "(A∪B)∩(A∪C)",
+  "universe": "1,2,3",
+  "want": true
+ },
+ {
+  "id": "S09",
+  "kind": "set",
+  "level": "杀手",
+  "title": "AI 常错：对称差等于交",
+  "lhs": "A⊕B",
+  "op": "=",
+  "rhs": "A∩B",
+  "universe": "1,2",
+  "want": false
+ },
+ {
+  "id": "R01",
+  "kind": "rel",
+  "level": "功能",
+  "title": "恒等关系",
+  "base": "{1,2,3}",
+  "pairs": "(1,1),(2,2),(3,3)",
+  "want": {
+   "自反": true,
+   "反自反": false,
+   "对称": true,
+   "反对称": true,
+   "传递": true,
+   "等价关系": true
+  }
+ },
+ {
+  "id": "R02",
+  "kind": "rel",
+  "level": "功能",
+  "title": "小于等于关系",
+  "base": "{1,2,3}",
+  "pairs": "(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)",
+  "want": {
+   "自反": true,
+   "对称": false,
+   "反对称": true,
+   "传递": true,
+   "等价关系": false
+  }
+ },
+ {
+  "id": "R03",
+  "kind": "rel",
+  "level": "功能",
+  "title": "小于关系",
+  "base": "{1,2,3}",
+  "pairs": "(1,2),(1,3),(2,3)",
+  "want": {
+   "自反": false,
+   "反自反": true,
+   "对称": false,
+   "反对称": true,
+   "传递": true,
+   "等价关系": false
+  }
+ },
+ {
+  "id": "R04",
+  "kind": "rel",
+  "level": "杀手",
+  "title": "AI 常漏传递验证",
+  "base": "{1,2}",
+  "pairs": "(1,2),(2,1),(1,1)",
+  "want": {
+   "自反": false,
+   "对称": true,
+   "反对称": false,
+   "传递": false
+  }
+ },
+ {
+  "id": "R05",
+  "kind": "rel",
+  "level": "边界",
+  "title": "空关系",
+  "base": "{1,2}",
+  "pairs": "",
+  "want": {
+   "自反": false,
+   "反自反": true,
+   "对称": true,
+   "反对称": true,
+   "传递": true,
+   "等价关系": false
+  }
+ },
+ {
+  "id": "R06",
+  "kind": "rel",
+  "level": "功能",
+  "title": "模 2 同余（等价关系）",
+  "base": "{1,2,3,4}",
+  "pairs": "(1,1),(2,2),(3,3),(4,4),(1,3),(3,1),(2,4),(4,2)",
+  "want": {
+   "自反": true,
+   "对称": true,
+   "传递": true,
+   "等价关系": true
+  }
+ },
+ {
+  "id": "R07",
+  "kind": "rel",
+  "level": "杀手",
+  "title": "AI 常错：链式关系忘闭包",
+  "base": "{1,2,3}",
+  "pairs": "(1,2),(2,3)",
+  "want": {
+   "传递": false
+  }
+ },
+ {
+  "id": "R08",
+  "kind": "rel",
+  "level": "边界",
+  "title": "全关系（是等价关系）",
+  "base": "{1,2}",
+  "pairs": "(1,1),(1,2),(2,1),(2,2)",
+  "want": {
+   "自反": true,
+   "对称": true,
+   "反对称": false,
+   "传递": true,
+   "等价关系": true
+  }
+ },
+ {
+  "id": "R09",
+  "kind": "rel",
+  "level": "杀手",
+  "title": "AI 全判对（实为四性质全不成立）",
+  "base": "{1,2,3}",
+  "pairs": "(1,1),(1,2),(2,1),(2,2),(3,1)",
+  "want": {
+   "自反": false,
+   "对称": false,
+   "反对称": false,
+   "传递": false,
+   "等价关系": false
+  }
+ },
+ {
+  "id": "G01",
+  "kind": "graph",
+  "level": "功能",
+  "title": "三角形：有欧拉回路",
+  "edges": "1-2, 2-3, 3-1",
+  "want": {
+   "连通": true,
+   "欧拉回路": true,
+   "欧拉通路": true
+  }
+ },
+ {
+  "id": "G02",
+  "kind": "graph",
+  "level": "功能",
+  "title": "链路：恰两个奇度顶点",
+  "edges": "1-2, 2-3, 3-4",
+  "want": {
+   "连通": true,
+   "欧拉回路": false,
+   "欧拉通路": true
+  }
+ },
+ {
+  "id": "G03",
+  "kind": "graph",
+  "level": "杀手",
+  "title": "AI 常错：完全图 K4 四顶点全为奇度",
+  "edges": "1-2, 1-3, 1-4, 2-3, 2-4, 3-4",
+  "want": {
+   "连通": true,
+   "欧拉回路": false,
+   "欧拉通路": false
+  }
+ },
+ {
+  "id": "G04",
+  "kind": "graph",
+  "level": "边界",
+  "title": "非连通图",
+  "edges": "1-2, 3-4",
+  "want": {
+   "连通": false,
+   "欧拉回路": false,
+   "欧拉通路": false
+  }
+ },
+ {
+  "id": "G05",
+  "kind": "graph",
+  "level": "杀手",
+  "title": "星形：四个奇度顶点",
+  "edges": "1-2, 1-3, 1-4",
+  "want": {
+   "连通": true,
+   "欧拉回路": false,
+   "欧拉通路": false
+  }
+ },
+ {
+  "id": "G06",
+  "kind": "graph",
+  "level": "边界",
+  "title": "完全图 K5（全偶度）",
+  "edges": "1-2, 1-3, 1-4, 1-5, 2-3, 2-4, 2-5, 3-4, 3-5, 4-5",
+  "want": {
+   "连通": true,
+   "欧拉回路": true,
+   "欧拉通路": true
+  }
+ },
+ {
+  "id": "G07",
+  "kind": "graph",
+  "level": "杀手",
+  "title": "AI 常错：有对角的四边形",
+  "edges": "1-2, 2-3, 3-4, 4-1, 1-3",
+  "want": {
+   "连通": true,
+   "欧拉回路": false,
+   "欧拉通路": true
+  }
+ }
+]
