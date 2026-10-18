@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="直接在浏览器中核验命题逻辑、集合、关系与图论，查看真值表与可复现反例。">
+  <meta name="theme-color" content="#123e55">
+  <title>离散数学核验台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123e55'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='44' fill='white'%3E∀%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<header><a class="brand" href="./"><span class="mark">∀</span> 离散数学核验台</a><a class="source" href="https://github.com/jiaobabahh/game" target="_blank" rel="noopener">查看源码</a></header>
+<main>
+  <section class="intro"><div><p class="course">离散数学实验室</p><h1>让每一个结论<br>都有验证依据。</h1><p class="lead">输入题目与断言，用真值表、关系性质和可复现反例检查答案。</p></div><div class="formula-art" aria-hidden="true"><span>∀ x ∈ A</span><strong>P → Q</strong><span>结论 / 证据 / 反例</span></div></section>
+  <div id="engine" class="engine" role="status"><span class="dot"></span><span id="engine-text">正在启动核验引擎…</span><button id="retry" class="small" hidden>重新加载</button></div>
+  <nav id="tabs" aria-label="核验类型">
+    <button data-mode="prop" class="active" aria-current="page">命题逻辑</button><button data-mode="set">集合</button><button data-mode="rel">关系</button><button data-mode="graph">图论</button><button data-mode="dissect">推理题拆解</button><button data-mode="regression">案例回归</button>
+  </nav>
+  <div class="workspace"><section class="input-pane" aria-labelledby="input-title"><div class="pane-heading"><h2 id="input-title">命题逻辑</h2><button id="example" class="small">载入示例</button></div><p id="mode-help" class="help"></p><form id="form"><div id="fields"></div><div class="actions"><button id="run" class="primary" type="submit" disabled>正在准备引擎…</button><button id="cancel" type="button" hidden>取消计算</button></div></form><p class="privacy">核验在你的浏览器内完成，题目与答案不会发送给模型服务。</p></section>
+  <section class="result-pane" aria-labelledby="result-title"><div class="pane-heading"><h2 id="result-title">核验结果</h2><button id="download" class="small" disabled>下载结果</button></div><div id="result" aria-live="polite"><div class="empty"><span>⊢</span><h3>从一条命题开始</h3><p>点击“开始核验”，查看结论、计算依据与反例。</p></div></div></section></div>
+  <details class="guide"><summary>使用说明与能力范围</summary><p>命题支持 ¬ ∧ ∨ → ↔，也支持 ~、&amp;&amp;、||、-&gt;、&lt;-&gt;。集合支持 ∪ ∩ − ⊕、P(A)、|A|、⊆ 等。推理题拆解仅支持原项目预设的真话／说谎句式；无法解析的文字会列出，不能据此宣称整题已验证。</p><p>集合穷举只对指定有限宇宙成立，不代表任意集合上的数学证明。关系与图论核验针对输入结构，图论页使用简单无向图（重复边合并）。本网页可粘贴 AI 答案进行核验；在线生成 AI 答案仍需独立后端，不在公开网页中存放密钥。</p><p>首次访问需下载约 18 MB 的计算引擎与依赖，请保持联网。计算超时可取消或重试。原项目与浏览器适配代码见源码仓库。</p></details>
+</main><footer><span>离散数学核验台</span><span>以计算为依据，保留不确定性。</span></footer>
+</body></html>
